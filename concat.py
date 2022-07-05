@@ -27,7 +27,7 @@ file_name = input('Enter output file name: ')
 command = ['ffmpeg','-f','concat','-safe','0','-i','file_list','-c','copy',str(file_name)+'.avi']
 
 subprocess.run(command, shell = False) # concatenation
-subprocess.run(fix_avi_index, shell = False)
+
 
 
 
