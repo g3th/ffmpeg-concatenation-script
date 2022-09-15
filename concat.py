@@ -32,7 +32,7 @@ end = input('Enter trim end (format 00:00:00): ')
 output = input('Enter trimmed video name: ')
 
 
-cut_command = ['ffmpeg', '-i', file_name+'.avi', '-ss', start, '-t', end, '-c:v', 'copy', '-c:a', 'copy', output]
+cut_command = ['ffmpeg', '-i', file_name+'.avi', '-ss', start, '-t', end, '-c:v', 'copy', '-c:a', 'copy', output+'.avi']
 subprocess.run(cut_command, shell = False)
 
 
