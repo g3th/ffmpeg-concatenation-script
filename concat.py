@@ -25,9 +25,15 @@ concatenation_list.close()
 file_name = input('Enter output file name: ')
 
 command = ['ffmpeg','-f','concat','-safe','0','-i','file_list','-c','copy',str(file_name)+'.avi']
-
 subprocess.run(command, shell = False) # concatenation
 
+start = input('Enter trim start (format 00:00:00): ')
+end = input('Enter trim end (format 00:00:00): ')
+output = input('Enter trimmed video name: ')
+
+
+cut_command = ['ffmpeg', '-i', file_name+'.avi', '-ss', start, '-t', end, '-c:v', 'copy', '-c:a', 'copy', output]
+subprocess.run(cut_command, shell = False)
 
 
 
